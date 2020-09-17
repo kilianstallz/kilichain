@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="117" failures="2" time="15.57">
+  <testsuite name="Blockchain" errors="0" failures="2" skipped="0" timestamp="2020-09-09T13:49:35" time="10.444" tests="20">
+    <testcase classname="Blockchain contains a `chain` Array instance" name="Blockchain contains a `chain` Array instance" time="0.003">
+    </testcase>
+    <testcase classname="Blockchain should start with the genesis block" name="Blockchain should start with the genesis block" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain adds a new block to the chain" name="Blockchain adds a new block to the chain" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain isValidChain() when chain does not with genesis block returns false" name="Blockchain isValidChain() when chain does not with genesis block returns false" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain isValidChain() when chain starts with genesis block and has multi blocks and a last hash ref has changed returns false" name="Blockchain isValidChain() when chain starts with genesis block and has multi blocks and a last hash ref has changed returns false" time="0">
+    </testcase>
+    <testcase classname="Blockchain isValidChain() when chain starts with genesis block and has multi blocks and the chain contains a block with invalid field returns false" name="Blockchain isValidChain() when chain starts with genesis block and has multi blocks and the chain contains a block with invalid field returns false" time="0.002">
+    </testcase>
+    <testcase classname="Blockchain isValidChain() when chain starts with genesis block and has multi blocks the chain contains a jumped difficulty returns false" name="Blockchain isValidChain() when chain starts with genesis block and has multi blocks the chain contains a jumped difficulty returns false" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain isValidChain() when chain starts with genesis block and has multi blocks and the chain does not contain any invalid blocks returns true" name="Blockchain isValidChain() when chain starts with genesis block and has multi blocks and the chain does not contain any invalid blocks returns true" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain replaceChain() when new chain is not longer does not replace the chain" name="Blockchain replaceChain() when new chain is not longer does not replace the chain" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain replaceChain() when new chain is not longer logs an error" name="Blockchain replaceChain() when new chain is not longer logs an error" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain replaceChain() when the new chain is longer and the chain is invalid does not replace the chain" name="Blockchain replaceChain() when the new chain is longer and the chain is invalid does not replace the chain" time="0.003">
+    </testcase>
+    <testcase classname="Blockchain replaceChain() when the new chain is longer and the chain is invalid logs an error" name="Blockchain replaceChain() when the new chain is longer and the chain is invalid logs an error" time="0">
+    </testcase>
+    <testcase classname="Blockchain replaceChain() when the new chain is longer and the chain is valid replaces the chain" name="Blockchain replaceChain() when the new chain is longer and the chain is valid replaces the chain" time="0.019">
+      <failure>TypeError: Cannot read property &apos;address&apos; of undefined
+    at Blockchain.validTransactionData (/Users/kilianstallz/development/blockchain/src/chain/Blockchain.ts:86:25)
+    at Blockchain.replaceChain (/Users/kilianstallz/development/blockchain/src/chain/Blockchain.ts:33:15)
+    at Object.&lt;anonymous&gt; (/Users/kilianstallz/development/blockchain/src/chain/Blockchain.spec.ts:146:22)
+    at Object.asyncJestLifecycle (/Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:58:37)
+    at /Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
+      <failure>Error: expect(received).toEqual(expected) // deep equality
+
+- Expected  - 24
++ Received  +  0
+
+@@ -5,30 +5,6 @@
+      &quot;hash&quot;: &quot;hash-one&quot;,
+      &quot;lastHash&quot;: &quot;------&quot;,
+      &quot;nonce&quot;: 0,
+      &quot;timestamp&quot;: 1,
+    },
+-   Block {
+-     &quot;data&quot;: &quot;Bears&quot;,
+-     &quot;difficulty&quot;: 2,
+-     &quot;hash&quot;: &quot;04ee98f497137810f8ad267bc6fed714bb9ae13155351407710080965e2755d7&quot;,
+-     &quot;lastHash&quot;: &quot;hash-one&quot;,
+-     &quot;nonce&quot;: 9,
+-     &quot;timestamp&quot;: 1599659382671,
+-   },
+-   Block {
+-     &quot;data&quot;: &quot;Beats&quot;,
+-     &quot;difficulty&quot;: 3,
+-     &quot;hash&quot;: &quot;0b07d333d13fa3ed418c8b6234b0be200a3ac48de1980c38af66bb987e46f7ab&quot;,
+-     &quot;lastHash&quot;: &quot;04ee98f497137810f8ad267bc6fed714bb9ae13155351407710080965e2755d7&quot;,
+-     &quot;nonce&quot;: 1,
+-     &quot;timestamp&quot;: 1599659382671,
+-   },
+-   Block {
+-     &quot;data&quot;: &quot;Battle&quot;,
+-     &quot;difficulty&quot;: 4,
+-     &quot;hash&quot;: &quot;0e847adcfc1358d2d83f896a1c5d40babae877c343d799f8e8c06c677bf70188&quot;,
+-     &quot;lastHash&quot;: &quot;0b07d333d13fa3ed418c8b6234b0be200a3ac48de1980c38af66bb987e46f7ab&quot;,
+-     &quot;nonce&quot;: 3,
+-     &quot;timestamp&quot;: 1599659382671,
+-   },
+  ]
+    at Object.&lt;anonymous&gt; (/Users/kilianstallz/development/blockchain/src/chain/Blockchain.spec.ts:149:36)
+    at Object.asyncJestTest (/Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
+    </testcase>
+    <testcase classname="Blockchain replaceChain() when the new chain is longer and the chain is valid logs a replacement" name="Blockchain replaceChain() when the new chain is longer and the chain is valid logs a replacement" time="0.004">
+      <failure>TypeError: Cannot read property &apos;address&apos; of undefined
+    at Blockchain.validTransactionData (/Users/kilianstallz/development/blockchain/src/chain/Blockchain.ts:86:25)
+    at Blockchain.replaceChain (/Users/kilianstallz/development/blockchain/src/chain/Blockchain.ts:33:15)
+    at Object.&lt;anonymous&gt; (/Users/kilianstallz/development/blockchain/src/chain/Blockchain.spec.ts:146:22)
+    at Object.asyncJestLifecycle (/Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:58:37)
+    at /Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
+      <failure>Error: expect(jest.fn()).toHaveBeenCalled()
+
+Expected number of calls: &gt;= 1
+Received number of calls:    0
+    at Object.&lt;anonymous&gt; (/Users/kilianstallz/development/blockchain/src/chain/Blockchain.spec.ts:152:27)
+    at Object.asyncJestTest (/Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /Users/kilianstallz/development/blockchain/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
+    </testcase>
+    <testcase classname="Blockchain validTransactionData() and the transaction data is valid returns true" name="Blockchain validTransactionData() and the transaction data is valid returns true" time="0.519">
+    </testcase>
+    <testcase classname="Blockchain validTransactionData() and the transaction data has multiple rewards returns false and logs an error" name="Blockchain validTransactionData() and the transaction data has multiple rewards returns false and logs an error" time="0.407">
+    </testcase>
+    <testcase classname="Blockchain validTransactionData() and the transaction data has at least one invalid outputMap and the transaction is not a reward transaction returns false and logs an error" name="Blockchain validTransactionData() and the transaction data has at least one invalid outputMap and the transaction is not a reward transaction returns false and logs an error" time="0.297">
+    </testcase>
+    <testcase classname="Blockchain validTransactionData() and the transaction data has at least one invalid outputMap and the transaction is a reward transaction returns false and logs an error" name="Blockchain validTransactionData() and the transaction data has at least one invalid outputMap and the transaction is a reward transaction returns false and logs an error" time="0.509">
+    </testcase>
+    <testcase classname="Blockchain validTransactionData() and the transaction data has at least one invalid outputMap and the transaction has at least one invalid input returns false and logs an error" name="Blockchain validTransactionData() and the transaction data has at least one invalid outputMap and the transaction has at least one invalid input returns false and logs an error" time="0.304">
+    </testcase>
+    <testcase classname="Blockchain validTransactionData() and the transaction data has at least one invalid outputMap and a block contains multiple identival transactions returns false and logs an error" name="Blockchain validTransactionData() and the transaction data has at least one invalid outputMap and a block contains multiple identival transactions returns false and logs an error" time="0.693">
+    </testcase>
+  </testsuite>
+  <testsuite name="Transaction" errors="0" failures="0" skipped="0" timestamp="2020-09-09T13:49:35" time="11.52" tests="21">
+    <testcase classname="Transaction has an `id`" name="Transaction has an `id`" time="0.631">
+    </testcase>
+    <testcase classname="Transaction outputMap has an `outputMap`" name="Transaction outputMap has an `outputMap`" time="0.555">
+    </testcase>
+    <testcase classname="Transaction outputMap outputs the amount to the recipient" name="Transaction outputMap outputs the amount to the recipient" time="0.386">
+    </testcase>
+    <testcase classname="Transaction outputMap outputs the remaining balance for the `senderWallet`" name="Transaction outputMap outputs the remaining balance for the `senderWallet`" time="0.303">
+    </testcase>
+    <testcase classname="Transaction input has an `input`" name="Transaction input has an `input`" time="0.33">
+    </testcase>
+    <testcase classname="Transaction input has a `timestamp`" name="Transaction input has a `timestamp`" time="0.6">
+    </testcase>
+    <testcase classname="Transaction input sets the `amount` to the `senderWallet` balance" name="Transaction input sets the `amount` to the `senderWallet` balance" time="0.455">
+    </testcase>
+    <testcase classname="Transaction input sets the `address` to the `senderWallet` publicKey" name="Transaction input sets the `address` to the `senderWallet` publicKey" time="0.569">
+    </testcase>
+    <testcase classname="Transaction input signs the input" name="Transaction input signs the input" time="0.806">
+    </testcase>
+    <testcase classname="Transaction validateTransaction() when the transaction is valid returns true" name="Transaction validateTransaction() when the transaction is valid returns true" time="0.648">
+    </testcase>
+    <testcase classname="Transaction validateTransaction() when the transaction is invalid and the transactions outputMap is invalid returns false and logs" name="Transaction validateTransaction() when the transaction is invalid and the transactions outputMap is invalid returns false and logs" time="0.39">
+    </testcase>
+    <testcase classname="Transaction validateTransaction() when the transaction is invalid and the transactions signature is invalid returns false and logs" name="Transaction validateTransaction() when the transaction is invalid and the transactions signature is invalid returns false and logs" time="0.736">
+    </testcase>
+    <testcase classname="Transaction update() and the amount is valid outputs the amount to the next recipient" name="Transaction update() and the amount is valid outputs the amount to the next recipient" time="0.601">
+    </testcase>
+    <testcase classname="Transaction update() and the amount is valid subtracts the amount from the original `senderWallet`" name="Transaction update() and the amount is valid subtracts the amount from the original `senderWallet`" time="0.291">
+    </testcase>
+    <testcase classname="Transaction update() and the amount is valid maintains a total output that matches the input amounts" name="Transaction update() and the amount is valid maintains a total output that matches the input amounts" time="0.235">
+    </testcase>
+    <testcase classname="Transaction update() and the amount is valid resigns the transaction" name="Transaction update() and the amount is valid resigns the transaction" time="0.256">
+    </testcase>
+    <testcase classname="Transaction update() and the amount is valid and another update for the same recipient adds to the recipients amount" name="Transaction update() and the amount is valid and another update for the same recipient adds to the recipients amount" time="0.358">
+    </testcase>
+    <testcase classname="Transaction update() and the amount is valid and another update for the same recipient subs the amount from the sender wallet" name="Transaction update() and the amount is valid and another update for the same recipient subs the amount from the sender wallet" time="0.361">
+    </testcase>
+    <testcase classname="Transaction update() and the amount is invalid throws an error" name="Transaction update() and the amount is invalid throws an error" time="0.283">
+    </testcase>
+    <testcase classname="Transaction rewardTransaction() creates a transaction with the reward input" name="Transaction rewardTransaction() creates a transaction with the reward input" time="0.444">
+    </testcase>
+    <testcase classname="Transaction rewardTransaction() creates one transaction for the miner with the minig reward" name="Transaction rewardTransaction() creates one transaction for the miner with the minig reward" time="0.254">
+    </testcase>
+  </testsuite>
+  <testsuite name="Wallet" errors="0" failures="0" skipped="0" timestamp="2020-09-09T13:49:46" time="1.864" tests="4">
+    <testcase classname="Wallet has a `balance`" name="Wallet has a `balance`" time="0.15">
+    </testcase>
+    <testcase classname="Wallet has a `publickey`" name="Wallet has a `publickey`" time="0.087">
+    </testcase>
+    <testcase classname="Wallet signing data verifies a signature" name="Wallet signing data verifies a signature" time="0.695">
+    </testcase>
+    <testcase classname="Wallet signing data does not verify an invalid signature" name="Wallet signing data does not verify an invalid signature" time="0.587">
+    </testcase>
+  </testsuite>
+  <testsuite name="Transaction" errors="0" failures="0" skipped="0" timestamp="2020-09-09T13:49:45" time="3.067" tests="9">
+    <testcase classname="Transaction has an `id`" name="Transaction has an `id`" time="0.227">
+    </testcase>
+    <testcase classname="Transaction outputMap has an `outputMap`" name="Transaction outputMap has an `outputMap`" time="0.189">
+    </testcase>
+    <testcase classname="Transaction outputMap outputs the amount to the recipient" name="Transaction outputMap outputs the amount to the recipient" time="0.224">
+    </testcase>
+    <testcase classname="Transaction outputMap outputs the remaining balance for the `senderWallet`" name="Transaction outputMap outputs the remaining balance for the `senderWallet`" time="0.218">
+    </testcase>
+    <testcase classname="Transaction input has an `input`" name="Transaction input has an `input`" time="0.205">
+    </testcase>
+    <testcase classname="Transaction input has a `timestamp`" name="Transaction input has a `timestamp`" time="0.199">
+    </testcase>
+    <testcase classname="Transaction input sets the `amount` to the `senderWallet` balance" name="Transaction input sets the `amount` to the `senderWallet` balance" time="0.386">
+    </testcase>
+    <testcase classname="Transaction input sets the `address` to the `senderWallet` publicKey" name="Transaction input sets the `address` to the `senderWallet` publicKey" time="0.207">
+    </testcase>
+    <testcase classname="Transaction input signs the input" name="Transaction input signs the input" time="0.59">
+    </testcase>
+  </testsuite>
+  <testsuite name="Block" errors="0" failures="0" skipped="0" timestamp="2020-09-09T13:49:48" time="0.291" tests="13">
+    <testcase classname="Block has all properties" name="Block has all properties" time="0.003">
+    </testcase>
+    <testcase classname="Block genesis() returns a block instance" name="Block genesis() returns a block instance" time="0">
+    </testcase>
+    <testcase classname="Block genesis() includes the genesis data" name="Block genesis() includes the genesis data" time="0.001">
+    </testcase>
+    <testcase classname="Block mineBlock() returns a block Instance" name="Block mineBlock() returns a block Instance" time="0">
+    </testcase>
+    <testcase classname="Block mineBlock() sets the `lastHash` to be the `hash` of the last block" name="Block mineBlock() sets the `lastHash` to be the `hash` of the last block" time="0.001">
+    </testcase>
+    <testcase classname="Block mineBlock() sets the data" name="Block mineBlock() sets the data" time="0.004">
+    </testcase>
+    <testcase classname="Block mineBlock() sets a timestamp" name="Block mineBlock() sets a timestamp" time="0">
+    </testcase>
+    <testcase classname="Block mineBlock() creates a sha-256 hash based on propper inputs" name="Block mineBlock() creates a sha-256 hash based on propper inputs" time="0.001">
+    </testcase>
+    <testcase classname="Block mineBlock() sets a `hash` that matches the difficulty criteria" name="Block mineBlock() sets a `hash` that matches the difficulty criteria" time="0.001">
+    </testcase>
+    <testcase classname="Block mineBlock() adjusts the difficulty" name="Block mineBlock() adjusts the difficulty" time="0">
+    </testcase>
+    <testcase classname="Block adjustDifficulty() raises the difficulty for a quickly mined block" name="Block adjustDifficulty() raises the difficulty for a quickly mined block" time="0">
+    </testcase>
+    <testcase classname="Block adjustDifficulty() lowers the difficulty for a slowly mined block" name="Block adjustDifficulty() lowers the difficulty for a slowly mined block" time="0">
+    </testcase>
+    <testcase classname="Block adjustDifficulty() has a lower limit of 1" name="Block adjustDifficulty() has a lower limit of 1" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="cryptoHash()" errors="0" failures="0" skipped="0" timestamp="2020-09-09T13:49:48" time="0.355" tests="3">
+    <testcase classname="cryptoHash() generates a SHA-256 hashed output" name="cryptoHash() generates a SHA-256 hashed output" time="0.003">
+    </testcase>
+    <testcase classname="cryptoHash() produces the same hash with the same input arguments in any order" name="cryptoHash() produces the same hash with the same input arguments in any order" time="0">
+    </testcase>
+    <testcase classname="cryptoHash() produces a unique hash when the properties have changed on an input" name="cryptoHash() produces a unique hash when the properties have changed on an input" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Block" errors="0" failures="0" skipped="0" timestamp="2020-09-09T13:49:48" time="0.394" tests="13">
+    <testcase classname="Block has all properties" name="Block has all properties" time="0.004">
+    </testcase>
+    <testcase classname="Block genesis() returns a block instance" name="Block genesis() returns a block instance" time="0.001">
+    </testcase>
+    <testcase classname="Block genesis() includes the genesis data" name="Block genesis() includes the genesis data" time="0">
+    </testcase>
+    <testcase classname="Block mineBlock() returns a block Instance" name="Block mineBlock() returns a block Instance" time="0.001">
+    </testcase>
+    <testcase classname="Block mineBlock() sets the `lastHash` to be the `hash` of the last block" name="Block mineBlock() sets the `lastHash` to be the `hash` of the last block" time="0.002">
+    </testcase>
+    <testcase classname="Block mineBlock() sets the data" name="Block mineBlock() sets the data" time="0">
+    </testcase>
+    <testcase classname="Block mineBlock() sets a timestamp" name="Block mineBlock() sets a timestamp" time="0.001">
+    </testcase>
+    <testcase classname="Block mineBlock() creates a sha-256 hash based on propper inputs" name="Block mineBlock() creates a sha-256 hash based on propper inputs" time="0.001">
+    </testcase>
+    <testcase classname="Block mineBlock() sets a `hash` that matches the difficulty criteria" name="Block mineBlock() sets a `hash` that matches the difficulty criteria" time="0">
+    </testcase>
+    <testcase classname="Block mineBlock() adjusts the difficulty" name="Block mineBlock() adjusts the difficulty" time="0">
+    </testcase>
+    <testcase classname="Block adjustDifficulty() raises the difficulty for a quickly mined block" name="Block adjustDifficulty() raises the difficulty for a quickly mined block" time="0.001">
+    </testcase>
+    <testcase classname="Block adjustDifficulty() lowers the difficulty for a slowly mined block" name="Block adjustDifficulty() lowers the difficulty for a slowly mined block" time="0">
+    </testcase>
+    <testcase classname="Block adjustDifficulty() has a lower limit of 1" name="Block adjustDifficulty() has a lower limit of 1" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="Wallet" errors="0" failures="0" skipped="0" timestamp="2020-09-09T13:49:35" time="14.214" tests="13">
+    <testcase classname="Wallet has a `balance`" name="Wallet has a `balance`" time="0.288">
+    </testcase>
+    <testcase classname="Wallet has a `publickey`" name="Wallet has a `publickey`" time="0.163">
+    </testcase>
+    <testcase classname="Wallet signing data verifies a signature" name="Wallet signing data verifies a signature" time="0.554">
+    </testcase>
+    <testcase classname="Wallet signing data does not verify an invalid signature" name="Wallet signing data does not verify an invalid signature" time="0.954">
+    </testcase>
+    <testcase classname="Wallet createTransaction() and the amount exceeds the balance throws an error" name="Wallet createTransaction() and the amount exceeds the balance throws an error" time="0.204">
+    </testcase>
+    <testcase classname="Wallet createTransaction() and the amount is valid creates an instance of `Transaction`" name="Wallet createTransaction() and the amount is valid creates an instance of `Transaction`" time="0.287">
+    </testcase>
+    <testcase classname="Wallet createTransaction() and the amount is valid matches the transaction input with the wallet" name="Wallet createTransaction() and the amount is valid matches the transaction input with the wallet" time="0.287">
+    </testcase>
+    <testcase classname="Wallet createTransaction() and the amount is valid outputs the amount to the recipient" name="Wallet createTransaction() and the amount is valid outputs the amount to the recipient" time="0.424">
+    </testcase>
+    <testcase classname="Wallet createTransaction() where a chain is passed calls `Wallet.calculateBalance`" name="Wallet createTransaction() where a chain is passed calls `Wallet.calculateBalance`" time="0.401">
+    </testcase>
+    <testcase classname="Wallet calculateBalance() and there are no outputs for the wallet returns the STARTING_BALANCE" name="Wallet calculateBalance() and there are no outputs for the wallet returns the STARTING_BALANCE" time="0.199">
+    </testcase>
+    <testcase classname="Wallet calculateBalance() and there are outputs for the wallet adds the summ of all outputs to the wallets balance" name="Wallet calculateBalance() and there are outputs for the wallet adds the summ of all outputs to the wallets balance" time="0.58">
+    </testcase>
+    <testcase classname="Wallet calculateBalance() and there are outputs for the wallet and wallet has made a transaction returns the output of the recent transaction" name="Wallet calculateBalance() and there are outputs for the wallet and wallet has made a transaction returns the output of the recent transaction" time="0.919">
+    </testcase>
+    <testcase classname="Wallet calculateBalance() and there are outputs for the wallet and wallet has made a transaction and there are outputs next to and after the recent transaction includes the output amounts in the returned balance" name="Wallet calculateBalance() and there are outputs for the wallet and wallet has made a transaction and there are outputs next to and after the recent transaction includes the output amounts in the returned balance" time="1.3">
+    </testcase>
+  </testsuite>
+  <testsuite name="Blockchain" errors="0" failures="0" skipped="0" timestamp="2020-09-09T13:49:48" time="0.493" tests="14">
+    <testcase classname="Blockchain contains a `chain` Array instance" name="Blockchain contains a `chain` Array instance" time="0.002">
+    </testcase>
+    <testcase classname="Blockchain should start with the genesis block" name="Blockchain should start with the genesis block" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain adds a new block to the chain" name="Blockchain adds a new block to the chain" time="0.002">
+    </testcase>
+    <testcase classname="Blockchain isValidChain() when chain does not with genesis block returns false" name="Blockchain isValidChain() when chain does not with genesis block returns false" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain isValidChain() when chain starts with genesis block and has multi blocks and a last hash ref has changed returns false" name="Blockchain isValidChain() when chain starts with genesis block and has multi blocks and a last hash ref has changed returns false" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain isValidChain() when chain starts with genesis block and has multi blocks and the chain contains a block with invalid field returns false" name="Blockchain isValidChain() when chain starts with genesis block and has multi blocks and the chain contains a block with invalid field returns false" time="0.003">
+    </testcase>
+    <testcase classname="Blockchain isValidChain() when chain starts with genesis block and has multi blocks the chain contains a jumped difficulty returns false" name="Blockchain isValidChain() when chain starts with genesis block and has multi blocks the chain contains a jumped difficulty returns false" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain isValidChain() when chain starts with genesis block and has multi blocks and the chain does not contain any invalid blocks returns true" name="Blockchain isValidChain() when chain starts with genesis block and has multi blocks and the chain does not contain any invalid blocks returns true" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain replaceChain() when new chain is not longer does not replace the chain" name="Blockchain replaceChain() when new chain is not longer does not replace the chain" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain replaceChain() when new chain is not longer logs an error" name="Blockchain replaceChain() when new chain is not longer logs an error" time="0">
+    </testcase>
+    <testcase classname="Blockchain replaceChain() when the new chain is longer and the chain is invalid does not replace the chain" name="Blockchain replaceChain() when the new chain is longer and the chain is invalid does not replace the chain" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain replaceChain() when the new chain is longer and the chain is invalid logs an error" name="Blockchain replaceChain() when the new chain is longer and the chain is invalid logs an error" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain replaceChain() when the new chain is longer and the chain is valid replaces the chain" name="Blockchain replaceChain() when the new chain is longer and the chain is valid replaces the chain" time="0.001">
+    </testcase>
+    <testcase classname="Blockchain replaceChain() when the new chain is longer and the chain is valid logs a replacement" name="Blockchain replaceChain() when the new chain is longer and the chain is valid logs a replacement" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="cryptoHash()" errors="0" failures="0" skipped="0" timestamp="2020-09-09T13:49:49" time="0.303" tests="2">
+    <testcase classname="cryptoHash() generates a SHA-256 hashed output" name="cryptoHash() generates a SHA-256 hashed output" time="0.002">
+    </testcase>
+    <testcase classname="cryptoHash() produces the same hash with the same input arguments in any order" name="cryptoHash() produces the same hash with the same input arguments in any order" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="TransactionPool" errors="0" failures="0" skipped="0" timestamp="2020-09-09T13:49:35" time="14.618" tests="5">
+    <testcase classname="TransactionPool setTransaction() adds a transaction" name="TransactionPool setTransaction() adds a transaction" time="0.24">
+    </testcase>
+    <testcase classname="TransactionPool existingTransaction() returns an existing transaction" name="TransactionPool existingTransaction() returns an existing transaction" time="0.214">
+    </testcase>
+    <testcase classname="TransactionPool validTransactions() returns valid transaction" name="TransactionPool validTransactions() returns valid transaction" time="4.501">
+    </testcase>
+    <testcase classname="TransactionPool clear() clears the transactions" name="TransactionPool clear() clears the transactions" time="0.188">
+    </testcase>
+    <testcase classname="TransactionPool clearBlockchainTransactions() clears the pool of any existing blockchain transactions" name="TransactionPool clearBlockchainTransactions() clears the pool of any existing blockchain transactions" time="1.638">
+    </testcase>
+  </testsuite>
+</testsuites>
